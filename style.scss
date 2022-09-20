@@ -5,7 +5,6 @@
 
 @import "colores";
 @import "operaciones";
-@import "footer";
 
 body{
     background-color: $color-negro;
@@ -68,31 +67,43 @@ img {
 
 /* ANIMACI/TRANS/TRANSI PARA LAS IMAGENES */
 
-.imgadr:hover{
-    transform: translate(0px,-50px);
-}
+// .imgadr:hover{
+//     transform: translate(0px,-50px);
+// }
 
 .imgadr{
-    transition: all 2s;
+    // transition: all 2s;
+    @include imagenes(transform);
     border: solid 2px $color-claro;
 }
 
-.imgtal:hover{
-    transform: translate(0px,-50px);
-}
+// .imgtal:hover{
+//     transform: translate(0px,-50px);
+// }
 
 .imgtal{
-    transition: all 2s;
+    // transition: all 2s;
+    @include imagenes(transform);
     border: solid 2px $color-claro;
 }
 
-.imgmin:hover{
-    transform: translate(0px,-50px);
-}
+// .imgmin:hover{
+//     transform: translate(0px,-50px);
+// }
 
 .imgmin{
-    transition: all 2s;
+    // transition: all 2s;
+    @include imagenes(transform);
     border: solid 2px $color-claro;
+}
+
+// MIXIN Y PARAMETRO
+
+@mixin imagenes ($hover) {
+    transition: all 1s;
+    &:hover{
+        transform: $hover;
+    }
 }
 
 
@@ -115,6 +126,8 @@ img {
     grid-area: segundaparte;
     background-color: brown;
 }
+
+
 
 .primersection {
     display: flex;
@@ -146,6 +159,9 @@ p{
     font-family: serif;
     margin-left: 10px;
 }
+
+
+
 
 
 
